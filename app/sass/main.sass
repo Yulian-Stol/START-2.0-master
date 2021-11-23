@@ -629,6 +629,7 @@
 		padding: 25px
 		background: #fff
 		height: 100%
+		width: 32% //
 
 		+r(767)
 			padding: 15px
@@ -677,36 +678,38 @@
 
 	&__next,
 	&__prev
-		display: flex
-		align-items: center
-		justify-content: center
-		position: absolute
-		top: 45%
-		z-index: 1
-		width: 40px
-		height: 40px
-		border-right: #fff 1px solid
-		border-bottom: #fff 1px solid
-
-		+r(1450)
+		+r(992)
+			display: flex
+			align-items: center
+			justify-content: center
+			position: absolute
+			top: 45%
+			z-index: 1
 			width: 20px
 			height: 20px
+			border-right: #fff 1px solid
+			border-bottom: #fff 1px solid
 
 	&__next
-		right: -100px
-		transform: translate(0, -50%)
-		+rotate(-45)
+		+r(992)
+			right: -100px
+			transform: translate(0, -50%)
+			+rotate(-45)
 
-		+r(1450)
-			right: -30px
+			+r(1450)
+				right: -30px
 
 	&__prev
-		left: -100px
-		transform: translate(0, -50%)
-		+rotate(135)
+		+r(992)
+			left: -100px
+			transform: translate(0, -50%)
+			+rotate(135)
 
-		+r(1450)
-			left: -30px
+			+r(1450)
+				left: -30px
+
+.swiper-wrapper
+	justify-content: space-between
 
 .tag
 	padding-bottom: 100px

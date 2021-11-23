@@ -2,29 +2,31 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	var mySwiper = new Swiper('.work__slider', {
-		slidesPerView: 1,
-		spaceBetween: 30,
-		loop: true,
-		pagination: {
-			el: '.work__pagination',
-			clickable: 'true',
-		},
-		navigation: {
-			nextEl: '.work__next',
-			prevEl: '.work__prev',
-		},
-		breakpoints: {
-			576: {
-				slidesPerView: 2,
-				spaceBetween: 20
+	if (document.documentElement.clientWidth < 992) {
+		var mySwiper = new Swiper('.work__slider', {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			loop: true,
+			pagination: {
+				el: '.work__pagination',
+				clickable: 'true',
 			},
-			992: {
-				slidesPerView: 3,
-				spaceBetween: 20
+			navigation: {
+				nextEl: '.work__next',
+				prevEl: '.work__prev',
 			},
-		}
-	});
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 20
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20
+				},
+			}
+		})
+	};
 
 	//---------block-none----------
 		const hamburgerr = (hamburgerButton, hamburgerButtonActive, hamburgerNav, hamburgerNavActive, hamburgerHeader, headerMenuActive) => {

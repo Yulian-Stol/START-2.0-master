@@ -31,7 +31,7 @@
 	border: 1px solid $dark
 	background-color: $dark
 	padding: 0 15px
-	font-size: 16px
+	font-size: 14px
 	color: #fff
 	font-weight: 600
 
@@ -49,24 +49,19 @@
 		margin-top: auto
 		background: #fff
 		color: $accent
-		padding: 15px
 		border-radius: 6px
-
-	&--update
-		text-transform: uppercase
-		position: absolute
-		left: 0
-		bottom: -80px
-		border: none
-		background: $accent
-		color: #fff
-		border-radius: 6px
-		padding: 16px 40px
+		border: #004584 1px solid
+		max-width: 180px
+		width: 100%
 		font-weight: 700
+		text-transform: uppercase
 		font-size: 14px
+		height: 48px
 
-		&:hover
-			background: $lite
+		+r(767)
+			max-width: 170px
+			height: 40px
+			font-size: 13px
 
 	&--more
 		text-transform: uppercase
@@ -136,22 +131,21 @@
 			transform: scale(1)
 
 .h1
-	font-size: 40px
+	font-size: 32px
 	font-weight: 700
 	text-transform: uppercase
+	color: $title
 
 	+r(992)
-		font-size: 35px
+		font-size: 28px
 
 	+r(767)
-		font-size: 30px
-
-	+r(576)
 		font-size: 24px
 
 .h2
 	font-size: 38px
 	font-weight: 400
+	color: $title
 
 	+r(767)
 		font-size: 28px
@@ -252,6 +246,11 @@
 	&__container
 		+between
 
+	&__wrap
+		display: flex
+		align-items: center
+		gap: 25px
+
 	&__logo
 		display: block
 		width: 156px
@@ -301,7 +300,7 @@
 	position: relative
 	display: block
 
-	+r(992)
+	+r(767)
 		display: none
 
 	&--btn
@@ -363,7 +362,7 @@
 			position: relative
 			width: 100%
 
-			+r(992)
+			+r(767)
 				display: block
 
 			form
@@ -394,11 +393,11 @@
 				padding: 0 40px 0 45px
 
 .banner
-	padding-top: 110px
+	padding-top: 80px
 	box-shadow: 0 -5px 10px gray
 
 	+r(992)
-		padding-top: 75px
+		padding-top: 70px
 
 	+r(767)
 		padding-bottom: 30px
@@ -410,12 +409,25 @@
 			flex-direction: column
 			align-items: center
 
-
 	&__title
 		margin-bottom: 30px
 
 		+r(767)
 			margin-bottom: 15px
+
+	&__text
+		font-size: 21px
+		line-height: 150%
+
+		+r(992)
+			font-size: 18px
+
+		+r(576)
+			font-size: 14px
+
+		br
+			+r(1200)
+				display: none
 
 	&__block
 		width: 43%
@@ -442,10 +454,12 @@
 					display: none
 
 	&__img
-		width: 57%
 		flex-shrink: 0
 
-		+r(576)
+		+r(1200)
+			width: 60%
+
+		+r(767)
 			width: 100%
 
 		img
@@ -485,14 +499,11 @@
 
 .update
 	padding-top: 60px
-	padding-bottom: 200px
+	padding-bottom: 60px
 
-	+r(767)
-		padding-bottom: 150px
-	
 	+r(576)
 		padding-top: 30px
-		padding-bottom: 130px
+		padding-bottom: 30px
 
 	&__block
 		width: 49%
@@ -504,7 +515,7 @@
 		+r(767)
 			width: 100%
 
-		&--another
+		&--white
 			background:	linear-gradient(104.23deg,#0f4881 27.79%,#0e2c4e 120%)
 			border: none
 
@@ -521,7 +532,7 @@
 
 		+r(767)
 			flex-direction: column
-			gap: 110px
+			gap: 30px
 
 	&__title
 		margin-bottom: 40px
@@ -549,11 +560,30 @@
 			color: $text
 			text-decoration: underline
 
+	&__arrow
+		border-right: #2f2f2f 1px solid
+		border-bottom: #2f2f2f 1px solid
+		width: 8px
+		height: 8px
+		display: inline-block
+		margin-left: 5px
+		+rotate(-45)
+
+		&--white
+			border-right: #fff 1px solid
+			border-bottom: #fff 1px solid
+
 .allsearch
 	padding-top: 50px
 
 	+r(576)
 		padding-top: 30px
+
+	&__title
+		margin-bottom: 20px
+
+		+r(767)
+			margin-bottom: 10px
 
 	form
 		position: relative
@@ -567,7 +597,7 @@
 			font-size: 15px
 			line-height: 38px
 			color: #0f233f
-			padding: 0 80px 0 150px
+			padding: 0 60px
 
 			+r(576)
 				height: 40px
@@ -582,15 +612,15 @@
 		left: 0
 		border: none
 		background: transparent
-		padding: 0 35px
+		padding: 0 25px
 		display: flex
 		align-items: center
 		gap: 10px
 		font-size: 20px
 
 .work
-	padding-top: 50px
-	padding-bottom: 50px
+	padding-top: 60px
+	padding-bottom: 60px
 	background: linear-gradient(103.97deg,#0f4881 23.99%,#0e2c4e 90.19%)
 
 	+r(576)
@@ -605,11 +635,17 @@
 		align-items: center
 		justify-content: center
 		margin: 15px 0
+		border: 2px solid #537ca6
+		border-radius: 50%
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 45px
+		color: #537ca6
 
-		&_more
-			width: 60px
-			height: 60px
-			padding: 0
+		path
+			fill: #537ca6
+			outline: none
 
 		svg
 			width: 100%
@@ -653,7 +689,7 @@
 	&__title
 		color: #fff
 		text-align: center
-		margin-bottom: 50px
+		margin-bottom: 40px
 		padding: 0 15px
 
 		+r(767)
@@ -668,12 +704,19 @@
 		color: $title
 		margin-bottom: 30px
 		text-align: center
+		text-transform: uppercase
+		line-height: 1.2
+
+		br
+			display: none
+			+r(1450)
+				display: block
 
 	&__text
 		text-align: center
 
 		br
-			+r(992)
+			+r(1200)
 				display: none
 
 	&__next,
@@ -728,16 +771,38 @@
 		flex-wrap: wrap
 		justify-content: space-around
 		row-gap: 10px
-		column-gap: 30px
+		column-gap: 20px
 
 		+r(1200)
-			column-gap: 14px
+			column-gap: 2px
+
+		+r(992)
+			column-gap: 10px
 
 	a
-		@extend .link
 		display: block
 		color: #000
 		font-weight: 500
+		border: 1px solid $accent
+		border-radius: 6px
+		padding: 5px
+
+		&:hover
+			color: $lite
+			border: 1px solid $lite
+
+	&--team
+		.tag__list
+			column-gap: 5px
+
+			+r(1200)
+				column-gap: 25px
+
+			+r(992)
+				column-gap: 15px
+
+			+r(576)
+				column-gap: 10px
 
 .footer
 	background: linear-gradient(103.97deg,#0f4881 16.33%,#0e2c4e 79.32%)
@@ -857,38 +922,62 @@
 		font-size: 12px
 
 //------team------
+.crumbs
+	padding-top: 110px
+
+	+r(767)
+		padding-top: 80px
+
+	ul
+		display: flex
+
+	li
+		font-size: 13px
+		line-height: 150%;
+		color: #9da7b6
+		text-decoration: none
+
+		&:hover
+			text-decoration: underline
+			cursor: pointer
+
+		&::after
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			width: 4px
+			height: 4px
+			border-right: #9da7b6 1px solid
+			border-bottom: #9da7b6 1px solid
+			-webkit-transform: rotate(-45deg)
+			-ms-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+			margin: 0 5px
+
+		&:last-child
+			&:hover
+				text-decoration: none
+				cursor: auto
+
+			&::after
+				display: none
 
 .team
-	padding-top: 120px
+	padding-top: 50px
 
-	+r(992)
-		padding-top: 75px
+	+r(576)
+		padding-top: 30px
 
 	&__answer
-		display: flex
-		justify-content: space-between
-
-		+r(992)
-			flex-direction: column
-
-		&_bank
-			display: flex
-			align-items: center
-			margin-left: 15px
-
-			+r(992)
-				margin-bottom: 20px
-				margin-left: 0
-
-			img
-				margin-right: 5px
-
 		&_title
-			font-weight: 700
 			margin-bottom: 30px
 
 			+r(576)
 				margin-bottom: 15px
+
+			br
+				+r(1200)
+					display: none
 
 		&_text
 			font-weight: 500
@@ -896,18 +985,6 @@
 
 			+r(992)
 				margin-bottom: 15px
-
-	&__tag
-		background: linear-gradient(104.23deg,#0f4881 27.79%,#0e2c4e 120%)
-		padding-bottom: 0
-		border-radius: 6px
-		padding: 10px
-		margin-bottom: 30px
-
-		a
-			color: #fff
-			&:hover
-				color: $lite
 
 	&__comment
 		display: flex
@@ -971,6 +1048,12 @@
 		+r(576)
 			margin-bottom: 15px
 
+		p
+			font-size: 21px
+			text-transform: uppercase
+			font-weight: 500
+			color: $title
+
 	&__block
 		display: flex
 		align-items: center
@@ -994,15 +1077,16 @@
 
 	&__text
 		&_title
-			font-weight: 700
-			font-size: 18px
+			font-size: 21px
 			margin-bottom: 40px
+			color: $accent
 
 			+r(576)
 				margin-bottom: 15px
 
 		&_text
 			margin-bottom: 30px
+			line-height: 150%
 
 			+r(576)
 				margin-bottom: 15px
